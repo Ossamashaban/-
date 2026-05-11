@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <link rel="stylesheet" href="todo-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 My Tasks</h1>
+            <p>Keep track of your daily tasks efficiently</p>
+        </div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Add a new task... (press Enter or click Add)"
+                autocomplete="off"
+            >
+            <button id="addBtn" class="btn">Add Task</button>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-label">Total Tasks</div>
+                <div class="stat-value" id="totalCount">0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Active</div>
+                <div class="stat-value" id="activeCount">0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Completed</div>
+                <div class="stat-value" id="completedCount">0</div>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Tasks List -->
+        <ul id="tasksList"></ul>
+
+        <!-- Empty State -->
+        <div id="emptyState">
+            <div class="empty-icon">✨</div>
+            <p>No tasks yet. Add one to get started!</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button id="clearCompletedBtn" class="btn" disabled>Clear Completed</button>
+            <button id="clearAllBtn" class="btn" disabled>Clear All</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"></div>
+
+    <script src="todo-script.js"></script>
+</body>
+</html>
